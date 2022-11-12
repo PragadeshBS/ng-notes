@@ -1,0 +1,14 @@
+.note-header {
+  justify-content: space-between;
+  align-items: center;
+}
+i {
+  /* color: red; */
+  color: white;
+  cursor: pointer;
+}
+.delete-icon {
+  background-color:crimson;
+  border-radius: 50%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}

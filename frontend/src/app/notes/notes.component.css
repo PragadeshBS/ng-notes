@@ -1,0 +1,15 @@
+.note {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+.note-header {
+  background-color: #497174;
+  color: white;
+}
+.note-content {
+  background-color: #eff5f5;
+  color: black;
+}
+#delete-icon {
+  color: #ff9f9f;
+}

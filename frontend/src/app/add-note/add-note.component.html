@@ -1,0 +1,59 @@
+<div class="container mt-3">
+  <div>
+    <h1 class="display-4" *ngIf="!updateFormId; else newForm">Add a note</h1>
+  </div>
+  <ng-template #newForm>
+    <div><h1 class="display-4">Update note</h1></div>
+  </ng-template>
+  <div class="w-50 mx-auto raised-content">
+    <form [formGroup]="addNoteForm">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" formControlName="title" class="form-control" />
+        <div
+          *ngIf="
+            addNoteForm.controls['title'].touched &&
+            addNoteForm.controls['title'].errors
+          "
+          class="alert alert-danger mt-1"
+        >
+          Enter a valid title
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Content</label>
+        <textarea formControlName="content" class="form-control"></textarea>
+        <div
+          *ngIf="
+            addNoteForm.controls['content'].touched &&
+            addNoteForm.controls['content'].errors
+          "
+          class="alert alert-danger mt-1"
+        >
+          Content is required
+        </div>
+      </div>
+      <div>
+        <button
+          *ngIf="!updateFormId; else updateFormSubmitBtn"
+          (click)="onSubmit()"
+          [disabled]="!addNoteForm.valid"
+          type="submit"
+          class="btn btn-primary d-block mx-auto"
+        >
+          Add note
+        </button>
+        <ng-template #updateFormSubmitBtn>
+          <button
+            (click)="onUpdate()"
+            [disabled]="!addNoteForm.valid"
+            type="submit"
+            class="btn btn-primary d-block mx-auto"
+          >
+            Update note
+          </button>
+        </ng-template>
+      </div>
+    </form>
+  </div>
+</div>

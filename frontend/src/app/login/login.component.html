@@ -1,0 +1,53 @@
+<div class="container mt-3">
+  <div><h1 class="display-4">Login</h1></div>
+  <div class="w-50 mx-auto raised-content">
+    <form [formGroup]="loginForm">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control" />
+        <div
+          *ngIf="
+            loginForm.controls['email'].touched &&
+            loginForm.controls['email'].errors
+          "
+          class="alert alert-danger mt-1"
+        >
+          Enter a valid email
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            loginForm.controls['password'].touched &&
+            loginForm.controls['password'].errors
+          "
+          class="alert alert-danger mt-1"
+        >
+          Password is required
+        </div>
+      </div>
+      <div class="mb-3">
+        <small class="text-muted">
+          Don't have an account yet?
+          <a routerLink="/signup">Sign up</a>
+        </small>
+      </div>
+      <div>
+        <button
+          (click)="onSubmit()"
+          [disabled]="!loginForm.valid"
+          type="submit"
+          class="btn btn-primary d-block mx-auto"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

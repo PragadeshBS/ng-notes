@@ -1,0 +1,25 @@
+<div class="container" *ngIf="note">
+  <div class="row note-header">
+    <div class="col-6 display-3">{{ note.title }}</div>
+    <div class="col-3">
+      <i
+        id="delete-icon"
+        class="delete-icon p-2 bi bi-trash"
+        (click)="onDelete()"
+      ></i>
+    </div>
+  </div>
+  <div class="mt-2">
+    <div class="small text-muted">Last modified: {{ note.updatedAt }}</div>
+    <div class="small text-muted">Created at {{ note.createdAt }}</div>
+  </div>
+  <hr />
+  <div>
+    <p>{{ note.content }}</p>
+  </div>
+  <div class="mt-5">
+    <button class="btn btn-primary d-block mx-auto" (click)="updateNote()">
+      Update note
+    </button>
+  </div>
+</div>

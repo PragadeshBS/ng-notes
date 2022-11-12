@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="!user; else userInfo">Loading...</div>
+  <ng-template #userInfo>
+    <h1 class="display-4">Profile</h1>
+    <div class="w-50 mx-auto text-center raised-content">
+      <div class="h4">Name: {{ user.name }}</div>
+      <div class="h4">Email: {{ user.email }}</div>
+      <div class="text-muted">Joined: {{ user.joined }}</div>
+    </div>
+  </ng-template>
+</div>
