@@ -2,11 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install-frontend": "npm install -g @angular/cli && cd frontend && npm install",
-    "build": "npm run install-frontend && cd frontend && ng build",
     "start": "node server.js"
   },
   "keywords": [],
