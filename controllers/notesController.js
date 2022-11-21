@@ -8,7 +8,7 @@ const addNote = async (req, res) => {
 
 const getNotes = async (req, res) => {
   const { email: createdBy } = req.query;
-  const notes = await Notes.find({ createdBy });
+  const notes = await Notes.find({ createdBy }).sort({ updatedAt: -1 });
   return res.status(200).json(notes);
 };
 
